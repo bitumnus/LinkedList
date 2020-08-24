@@ -12,7 +12,8 @@ export class LinkedList {
     public addToHead(value: string): ListNode {
 
         // TODO
-        return;
+        this.head.value = value;
+        return this.head;
     }
 
     /**
@@ -31,8 +32,14 @@ export class LinkedList {
      */
     public get(index: number): ListNode {
 
-        // TODO
-        return;
+        try {
+            if ( typeof index !== 'number' )
+            throw 'index is invalid';
+         }
+         catch (e) {
+            throw new Error('oops');
+         }
+        return LinkedList.get(0);
     }
 
     /**
@@ -43,6 +50,11 @@ export class LinkedList {
     public values(): Array<string> {
 
         // TODO
-        return;
+        let listArr = [];
+        if (this.head.value) {
+            listArr.push(this.head.next.value)
+            
+        }
+        return listArr;
     }
 }
